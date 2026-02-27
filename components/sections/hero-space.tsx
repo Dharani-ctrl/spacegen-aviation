@@ -58,11 +58,11 @@ export function HeroSection() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-10 pb-12 sm:pt-16 bg-gradient-to-br from-white via-blue-50 to-indigo-50">
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-24 pb-12 sm:pt-32 bg-gradient-to-br from-white via-blue-50 to-indigo-50">
       {/* Soft decorative orbs */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl pointer-events-none hidden lg:block" />
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-indigo-200/30 rounded-full blur-3xl pointer-events-none hidden lg:block" />
-      
+
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start"
@@ -101,7 +101,7 @@ export function HeroSection() {
 
             {/* Main Heading */}
             <motion.div variants={itemVariants} className="space-y-4">
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-black leading-tight text-balance uppercase text-gray-900">
+              <h1 className="text-3xl sm:text-6xl md:text-7xl font-black leading-tight text-balance uppercase text-gray-900">
                 <TextReveal duration={1}>
                   Aviation Programme
                 </TextReveal>
@@ -129,14 +129,18 @@ export function HeroSection() {
             {/* Stats */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-gray-200"
+              className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-8 border-t border-gray-200"
             >
               {[
                 { value: '1.6K+', label: 'Skilled Pilots', color: 'from-blue-600 to-cyan-600' },
                 { value: '75', label: 'Aircraft', color: 'from-indigo-600 to-blue-600' },
                 { value: '20+', label: 'Certifications', color: 'from-cyan-600 to-teal-600' },
               ].map((stat, idx) => (
-                <motion.div key={idx} whileHover={{ scale: 1.05 }} className="space-y-1">
+                <motion.div
+                  key={idx}
+                  whileHover={{ scale: 1.05 }}
+                  className={`space-y-1 ${idx === 2 ? 'col-span-2 sm:col-span-1' : ''}`}
+                >
                   <div className={`text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r ${stat.color}`}>
                     {stat.value}
                   </div>
@@ -149,14 +153,14 @@ export function HeroSection() {
           {/* Right Side — NEW Top Image + highlight cards */}
           <ParallaxSection offset={30}>
             <motion.div variants={itemVariants} className="space-y-6">
-              
+
               {/* --- NEW RECTANGLE IMAGE AREA (Marked in your request) --- */}
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.01 }}
                 className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[21/9] sm:aspect-video group"
               >
-                <img 
-                  src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=2070&auto=format&fit=crop" 
+                <img
+                  src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=2070&auto=format&fit=crop"
                   alt="Aviation Tech"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                 />
@@ -184,9 +188,9 @@ export function HeroSection() {
                       scale: 1.02,
                       boxShadow: `0 20px 40px -12px rgba(59,130,246, 0.25)`
                     }}
-                    className="group relative bg-white/70 backdrop-blur-md rounded-2xl border border-gray-100 hover:border-white shadow-sm transition-all duration-300 overflow-hidden flex h-auto md:h-32"
+                    className="group relative bg-white/70 backdrop-blur-md rounded-2xl border border-gray-100 hover:border-white shadow-sm transition-all duration-300 overflow-hidden flex flex-col sm:flex-row h-auto sm:h-32"
                   >
-                    <div className="relative w-32 flex-shrink-0">
+                    <div className="relative w-full sm:w-32 h-48 sm:h-full flex-shrink-0">
                       <img
                         src={item.image}
                         alt={item.imageAlt}
