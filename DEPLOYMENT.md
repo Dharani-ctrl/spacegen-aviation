@@ -36,7 +36,7 @@ git push -u origin main
    - Root Directory: ./
 6. Set Environment Variables:
    ```
-   NEXT_PUBLIC_API_URL=https://spacegen-backend.onrender.com/api/v1
+   NEXT_PUBLIC_API_URL=https://spacegen-backend.up.railway.app/api/v1
    ```
 7. Click "Deploy"
 
@@ -44,21 +44,20 @@ Your frontend will be live at: `https://spacegen-website.vercel.app`
 
 ---
 
-## Backend Deployment (Node.js on Render)
+## Backend Deployment (Node.js on Railway)
 
 ### Step 1: Prepare Backend Repository
 
-Create a new GitHub repository for backend:
+Create a new GitHub repository for backend (or use an existing private repo):
 ```bash
 mkdir spacegen-backend
 cd spacegen-backend
 git init
 
-# Copy all backend files from BACKEND_SETUP.md
-# Commit everything
+# Copy backend files into this folder, then commit
 git add .
 git commit -m "Initial SpaceGen backend"
-git push origin main
+git push -u origin main
 ```
 
 ### Step 2: Set up MongoDB Atlas
@@ -71,25 +70,17 @@ git push origin main
 4. Create Database User:
    - Username: spacegen_admin
    - Password: (generate secure password)
-5. Get Connection String:
-   - Click "Connect" → "Drivers"
-   - Copy MongoDB URI
-   - Replace `<password>` and `<dbname>` with your values
+5. Get Connection String and whitelist your IPs or allow access from anywhere (0.0.0.0/0) if using Railway for convenience.
    - Example: `mongodb+srv://spacegen_admin:password@cluster.mongodb.net/spacegen`
 
-### Step 3: Deploy on Render
+### Step 3: Deploy on Railway
 
-1. Go to [render.com](https://render.com)
-2. Sign up and connect GitHub
-3. Create New → "Web Service"
-4. Select your backend repository
-5. Configure:
-   - Name: spacegen-backend
-   - Environment: Node
+1. Go to [railway.app](https://railway.app) and sign in (you can use GitHub for quick linking).
+2. Click "New Project" → "Deploy from GitHub" and select your backend repository.
+3. Railway will detect the Node.js project. Configure (if prompted):
    - Build Command: `npm install`
-   - Start Command: `npm start`
-   - Instance Type: Free
-6. Add Environment Variables:
+   - Start Command: `npm start` (or your app's start script)
+4. Add Environment Variables in the Railway project settings (Variables tab):
    ```
    PORT=5000
    NODE_ENV=production
@@ -104,9 +95,11 @@ git push origin main
    ADMIN_EMAIL=admin@spacegen.com
    ADMIN_PASSWORD=spacegen@2024
    ```
-7. Click "Create Web Service"
+5. Deploy the project. Railway will build and provide a public URL like `https://your-project.up.railway.app`.
 
-Your backend will be live at: `https://spacegen-backend.onrender.com`
+Tip: After the first deploy, set the frontend `NEXT_PUBLIC_API_URL` to the Railway URL plus `/api/v1`.
+
+Your backend will be live at something like: `https://your-project.up.railway.app`
 
 ---
 
@@ -142,7 +135,7 @@ Your backend will be live at: `https://spacegen-backend.onrender.com`
 
 ### Frontend (.env.local)
 ```
-NEXT_PUBLIC_API_URL=https://spacegen-backend.onrender.com/api/v1
+NEXT_PUBLIC_API_URL=https://spacegen-backend.up.railway.app/api/v1
 ```
 
 ### Backend (.env)
@@ -189,11 +182,11 @@ ADMIN_PASSWORD=spacegen@2024
 - Set up error notifications
 - Configure analytics
 
-### Render Dashboard
-- Monitor server logs
-- Check CPU/Memory usage
-- Set up restart policies
-- Configure error emails
+### Railway Dashboard
+- Monitor service logs
+- Check CPU/Memory usage and usage quotas
+- Set up restart/auto-redeploy policies
+- Configure alerts and error notifications
 
 ### MongoDB Atlas
 - Monitor database performance
@@ -208,7 +201,7 @@ ADMIN_PASSWORD=spacegen@2024
 | Service | Free Tier | Notes |
 |---------|-----------|-------|
 | Vercel Frontend | ✓ Included | 100GB bandwidth |
-| Render Backend | $7/month | Free tier has 15 min inactivity |
+| Railway Backend | Free (limited) | May auto-sleep on free tier; upgrade as needed |
 | MongoDB | ✓ Included | 512MB storage |
 | Email (Gmail) | ✓ Included | 500 emails/day |
 | Domain | $12/year | GoDaddy/Namecheap |
@@ -271,7 +264,7 @@ As traffic grows, consider:
 - A/B testing setup
 
 ### Backend
-- Upgrade Render to paid plan
+- Upgrade Railway to a paid plan when scaling
 - Add caching layer (Redis)
 - Database indexing optimization
 - API rate limiting
