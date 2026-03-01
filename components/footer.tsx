@@ -18,11 +18,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4 md:col-span-1">
             <div className="inline-block">
-              <h3 className="text-2xl font-black tracking-widest text-white">SARDC</h3>
+              <h3 className="text-2xl font-black tracking-widest text-white">SARD</h3>
               <div className="h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 mt-1 rounded-full" />
             </div>
             <p className="text-xs font-bold tracking-[0.2em] text-cyan-400 leading-tight uppercase">
-              SpaceGen Aviation<br />Research & Design Center
+              SpaceGen Aviation<br />Research & Development
             </p>
             <p className="text-sm text-slate-400 leading-relaxed">
               India's premier aviation education provider with global standards and IN-SPACE certification.
@@ -129,18 +129,18 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-sm text-slate-500">
-            © {currentYear} SpaceGen Aviation SARDC. All Rights Reserved.
+            © {currentYear} SpaceGen Aviation SARD. All Rights Reserved.
           </p>
           <div className="flex gap-6">
-            {['Privacy', 'Terms', 'Cookies'].map((item) => (
-              <Link
-                key={item}
-                href="#"
-                className="text-xs text-slate-500 hover:text-cyan-400 transition-colors uppercase tracking-wider"
-              >
-                {item}
-              </Link>
-            ))}
+            <Link href="/privacy" className="text-xs text-slate-500 hover:text-cyan-400 transition-colors uppercase tracking-wider">
+              Privacy
+            </Link>
+            <Link href="/terms" className="text-xs text-slate-500 hover:text-cyan-400 transition-colors uppercase tracking-wider">
+              Terms
+            </Link>
+            <Link href="/cookies" className="text-xs text-slate-500 hover:text-cyan-400 transition-colors uppercase tracking-wider">
+              Cookies
+            </Link>
           </div>
         </div>
       </div>

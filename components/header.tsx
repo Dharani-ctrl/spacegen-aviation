@@ -68,8 +68,8 @@ export default function Header() {
             <Image src="/sardc-logo.png" alt="SARDC Logo" width={48} height={48} className="object-contain" priority />
           </div>
           <div className="flex flex-col justify-center">
-            <span className="font-black text-xl sm:text-2xl text-white tracking-widest group-hover:text-cyan-400 transition-colors leading-none">SARDC</span>
-            <span className="block text-[0.45rem] sm:text-[0.6rem] font-bold text-cyan-400 tracking-[0.1em] sm:tracking-[0.15em] mt-1 sm:mt-1.5 leading-tight sm:leading-none drop-shadow-[0_0_8px_rgba(0,217,255,0.5)]">SPACEGEN AVIATION RESEARCH CENTER</span>
+            <span className="font-black text-xl sm:text-2xl text-white tracking-widest group-hover:text-cyan-400 transition-colors leading-none">SARD</span>
+            <span className="block text-[0.45rem] sm:text-[0.6rem] font-bold text-cyan-400 tracking-[0.1em] sm:tracking-[0.15em] mt-1 sm:mt-1.5 leading-tight sm:leading-none drop-shadow-[0_0_8px_rgba(0,217,255,0.5)]">SPACEGEN AVIATION RESEARCH & DEVELOPMENT</span>
           </div>
         </Link>
 
