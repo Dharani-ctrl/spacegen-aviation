@@ -98,11 +98,10 @@ export default function AdminDashboard() {
             <button
               key={status}
               onClick={() => setFilter(status)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                filter === status
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-card border border-border text-foreground hover:border-primary/50'
-              }`}
+              className={`px-4 py-2 rounded-lg font-medium transition-all ${filter === status
+                ? 'bg-primary text-primary-foreground'
+                : 'bg-card border border-border text-foreground hover:border-primary/50'
+                }`}
             >
               {status.charAt(0).toUpperCase() + status.slice(1)}
             </button>

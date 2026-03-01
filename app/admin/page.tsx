@@ -13,7 +13,7 @@ export default function AdminLogin() {
   const [loading, setLoading] = useState(false)
 
   // Default admin password (in production, use proper authentication)
-  const DEFAULT_PASSWORD = 'spacegen@2024'
+  const DEFAULT_PASSWORD = 'spacegen@2026'
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
