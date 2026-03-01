@@ -97,7 +97,7 @@ export function HeroSection() {
               </div>
               <div className="bg-gradient-to-r from-blue-700 to-indigo-700 px-4 py-2 flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
-                <p className="text-white text-xs font-bold uppercase tracking-widest">SpaceGen Aviation Research &amp; Design Center</p>
+                <p className="text-white text-xs font-bold uppercase tracking-widest">SpaceGen Aviation Research &amp; Development</p>
               </div>
             </motion.div>
 
