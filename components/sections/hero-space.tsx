@@ -30,7 +30,7 @@ export function HeroSection() {
       title: 'IIT-Level Program',
       detail: "India's first aviation-focused IIT equivalent curriculum",
       gradient: 'from-blue-500 to-cyan-400',
-      image: '/img2.jpeg',
+      image: '/img2 (2).jpeg',
       imageAlt: 'Enthusiastic school students in a modern aviation classroom',
     },
     {

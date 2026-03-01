@@ -36,7 +36,7 @@ const galleryImages = [
     { url: '/img39.jpeg', title: 'Instrument Rating', description: 'Mastering flight by reference to instruments.' },
     { url: '/img40.jpeg', title: 'Academy Campus', description: 'Our beautiful location for learning.' },
     { url: '/img41.jpeg', title: 'Passion for Flight', description: 'Where dreams take to the skies.' },
-    { url: '/img2.jpeg', title: 'Inauguration', description: 'The beginning of excellence.' },
+    { url: '/img2 (2).jpeg', title: 'Inauguration', description: 'The beginning of excellence.' },
 ];
 
 export function GallerySection() {
