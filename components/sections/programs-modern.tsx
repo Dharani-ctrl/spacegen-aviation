@@ -33,11 +33,11 @@ export function ProgramsSection() {
       target: 'Class 4th - 12th',
       price: '₹15,000',
       features: [
-        'Engaging and conceptual pilot training',
-        'Insightful offline classes',
-        'Wings of wonder program',
-        'Engine propulsions & flight simulator',
-        'Voyage to air bases & paragliding',
+        'Fun Pilot Training Games!',
+        'Exciting In-Person Labs',
+        'Wings of Wonder Program',
+        'Fly a Simulator & Build Engines!',
+        'Awesome Field Trips & Paragliding!',
       ],
       icon: Rocket,
       gradient: 'from-blue-500/10 to-cyan-500/10',
@@ -53,11 +53,11 @@ export function ProgramsSection() {
       target: 'Class 12th & Above',
       price: '₹35,000',
       features: [
-        'Immerse in one-of-a-kind aviation',
-        'Guided by skilled engineers',
-        'Oral & hands-on UAV training',
-        'Well trained curriculum & material',
-        'Industry certification',
+        'Become a Young Pilot Expert!',
+        'Learn from Real Engineers!',
+        'Fly Your Own Drones (UAVs)!',
+        'Get Your Own Aviation Kit!',
+        'Professional Industry Certification',
       ],
       icon: Plane,
       gradient: 'from-indigo-500/10 to-purple-500/10',
@@ -126,14 +126,14 @@ export function ProgramsSection() {
             <span className="text-sm font-black text-blue-600 uppercase tracking-widest">Enroll in Your Future</span>
           </div>
           <h2 className="text-5xl sm:text-6xl font-black text-gray-900 text-balance mb-6 uppercase">
-            Choose Your
+            Start Your
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
               {' '}
-              Flight Path
+              Aviation Adventure
             </span>
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed font-medium">
-            Join India's most advanced aviation training ecosystem designed for high-potential students.
+          <p className="text-xl text-gray-600 leading-relaxed font-bold">
+            Join the most exciting aviation school for kids and future pilots!
           </p>
         </motion.div>
 

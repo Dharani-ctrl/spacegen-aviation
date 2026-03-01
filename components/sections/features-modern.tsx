@@ -6,50 +6,50 @@ export function FeaturesSection() {
   const features = [
     {
       icon: BookOpen,
-      title: 'Workshops & Exhibitions',
-      description: 'Engage in hands-on workshops and inspiring aviation exhibitions',
+      title: 'Fun Workshops',
+      description: 'Get hands-on and build amazing things in our creative aviation workshops!',
       gradient: 'from-blue-500 to-cyan-500',
-      badge: 'HANDS-ON',
+      badge: 'CREATE',
       badgeColor: 'text-blue-600 bg-blue-50 border-blue-200',
     },
     {
       icon: Microscope,
-      title: 'Flight Simulation Mastery',
-      description: 'Real-world flying experience with cutting-edge simulators on campus',
+      title: 'Learn to Fly!',
+      description: 'Experience the thrill of being in a real cockpit with our cool simulators!',
       gradient: 'from-indigo-500 to-blue-500',
-      badge: 'SIMULATION',
+      badge: 'FLIGHT',
       badgeColor: 'text-indigo-600 bg-indigo-50 border-indigo-200',
     },
     {
       icon: Users,
-      title: 'Industry Insight & Lectures',
-      description: 'Guidance from overseas university professors and aerospace professionals',
+      title: 'Meet Pilot Mentors',
+      description: 'Ask questions and learn secrets from professional pilots and engineers!',
       gradient: 'from-cyan-500 to-teal-500',
-      badge: 'MENTORSHIP',
+      badge: 'FRIENDS',
       badgeColor: 'text-cyan-600 bg-cyan-50 border-cyan-200',
     },
     {
       icon: Target,
-      title: 'Rocketry & Drone Design',
-      description: 'Unmanned aerial systems, drone assembly, and testing rockets',
+      title: 'Design Rockets!',
+      description: 'Design, build, and test your very own rockets and flying drones!',
       gradient: 'from-blue-600 to-indigo-600',
-      badge: 'ENGINEERING',
+      badge: 'BUILD IT',
       badgeColor: 'text-blue-600 bg-blue-50 border-blue-200',
     },
     {
       icon: Globe,
-      title: 'Aviation Engineering',
-      description: 'Aircraft construction, electronics integration, and precision engineering',
+      title: 'How Planes Work',
+      description: 'Discover the science of how giant planes stay up in the sky!',
       gradient: 'from-teal-500 to-cyan-600',
-      badge: 'AEROSPACE',
+      badge: 'SCIENCE',
       badgeColor: 'text-teal-600 bg-teal-50 border-teal-200',
     },
     {
       icon: Lightbulb,
-      title: 'Exploratory Excursions',
-      description: 'Space watch programs, field trips, and aerial operations testing',
+      title: 'Space Field Trips',
+      description: 'Go on exciting adventures to air bases and watch the stars!',
       gradient: 'from-indigo-500 to-purple-500',
-      badge: 'DISCOVERY',
+      badge: 'ADVENTURE',
       badgeColor: 'text-indigo-600 bg-indigo-50 border-indigo-200',
     },
   ];
@@ -106,7 +106,7 @@ export function FeaturesSection() {
             <span className="text-sm font-bold text-blue-600 uppercase tracking-wider">India's First</span>
           </div>
           <h2 className="text-5xl sm:text-6xl font-black text-gray-900 text-balance mb-6 uppercase">
-            IIT Equivalent Program
+            Become a Young Space Expert!
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
             Experience 21 elite modules including workshops, exhibitions, multiple hands-on experiments, and insightful offline classes.

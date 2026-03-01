@@ -78,11 +78,22 @@ export function HeroSection() {
               className="relative rounded-2xl overflow-hidden shadow-lg border border-blue-100 bg-blue-50 group"
             >
               <div className="relative w-full" style={{ aspectRatio: '16/10' }}>
-                <img
-                  src="/img16.jpeg"
-                  alt="SpaceGen students working on aerospace research"
-                  className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-500"
-                />
+                {/* 
+                  NOTE: Replace the src URL below with your actual video file path. 
+                  Place your video (e.g., 'sample.mp4') in the 'public' folder 
+                  and update the src to: src="/sample.mp4" 
+                */}
+                <video
+                  src="kids.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                >
+                  <track kind="captions" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div className="bg-gradient-to-r from-blue-700 to-indigo-700 px-4 py-2 flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
@@ -160,7 +171,7 @@ export function HeroSection() {
                 className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[21/9] sm:aspect-video group"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=2070&auto=format&fit=crop"
+                  src="/kids3.jpg"
                   alt="Aviation Tech"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                 />

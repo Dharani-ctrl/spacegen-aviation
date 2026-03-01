@@ -60,7 +60,7 @@ export function GallerySection() {
                         viewport={{ once: true }}
                         className="text-4xl font-black tracking-tight text-slate-900 md:text-5xl lg:text-6xl"
                     >
-                        ACADEMY <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">GALLERY</span>
+                        OUR SPACE <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">ADVENTURES</span>
                     </motion.h2>
                     <motion.div
                         initial={{ width: 0 }}
@@ -76,7 +76,7 @@ export function GallerySection() {
                         viewport={{ once: true }}
                         className="max-w-2xl mx-auto mt-6 text-lg text-slate-600 font-medium"
                     >
-                        A visual journey through SARDC Academy's world-class flight training programs and modern facilities.
+                        Check out our amazing students and cool aircraft in action! See what it&apos;s like to be part of the SpaceGen family.
                     </motion.p>
                 </div>
 
