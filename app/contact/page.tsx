@@ -49,9 +49,14 @@ export default function ContactPage() {
                 <Mail className="w-8 h-8 text-indigo-600" />
               </div>
               <h3 className="font-black text-sm uppercase tracking-widest text-gray-400 mb-2">Email</h3>
-              <a href="mailto:spacegensouthindia@gmail.com" className="text-gray-900 font-black text-sm hover:text-indigo-600 transition-colors break-all leading-relaxed">
-                spacegensouthindia@gmail.com
-              </a>
+              <div className="space-y-1">
+                <a href="mailto:info@spacegenaviation.in" className="text-gray-900 font-bold hover:text-indigo-600 transition-colors break-all leading-relaxed block text-xs">
+                  info@spacegenaviation.in
+                </a>
+                <a href="mailto:ceo@spacegenaviation.in" className="text-gray-900 font-bold hover:text-indigo-600 transition-colors break-all leading-relaxed block text-xs">
+                  ceo@spacegenaviation.in
+                </a>
+              </div>
             </div>
 
             <div className="p-8 rounded-[2rem] border border-gray-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center group">

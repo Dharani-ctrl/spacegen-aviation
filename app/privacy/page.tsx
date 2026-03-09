@@ -86,7 +86,9 @@ export default function PrivacyPolicy() {
                         </h2>
                         <p className="text-slate-600 leading-relaxed">
                             If you have any questions or concerns about our Privacy Policy or your personal data, please contact our data protection officer at: <br />
-                            <strong className="text-slate-900 mt-2 block">Email:</strong> <a href="mailto:spacegensouthindia@gmail.com" className="hover:text-cyan-600 transition-colors">spacegensouthindia@gmail.com</a><br />
+                            <strong className="text-slate-900 mt-2 block">Email:</strong> 
+                            <a href="mailto:info@spacegenaviation.in" className="hover:text-cyan-600 transition-colors block">info@spacegenaviation.in</a>
+                            <a href="mailto:ceo@spacegenaviation.in" className="hover:text-cyan-600 transition-colors block">ceo@spacegenaviation.in</a><br />
                             <strong className="text-slate-900 block mt-1">Phone:</strong> +91 9842 158350
                         </p>
 

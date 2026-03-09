@@ -41,7 +41,6 @@ export const metadata: Metadata = {
   },
 }
 
-import CustomCursor from '@/components/custom-cursor';
 
 export default function RootLayout({
   children,
@@ -51,7 +50,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-white text-gray-900`}>
-        <CustomCursor />
         <div className="relative">
           {children}
         </div>

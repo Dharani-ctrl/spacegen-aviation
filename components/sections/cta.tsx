@@ -33,9 +33,14 @@ export default function CTA() {
           <div className="p-8 rounded-lg border border-border bg-card text-center hover:border-primary/50 transition-colors">
             <Mail className="w-8 h-8 text-primary mx-auto mb-4" />
             <h4 className="font-semibold mb-2">Email Us</h4>
-            <a href="mailto:spacegensouthindia@gmail.com" className="text-primary hover:underline text-sm">
-              spacegensouthindia@gmail.com
-            </a>
+            <div className="space-y-1">
+              <a href="mailto:info@spacegenaviation.in" className="text-primary hover:underline text-xs block">
+                info@spacegenaviation.in
+              </a>
+              <a href="mailto:ceo@spacegenaviation.in" className="text-primary hover:underline text-xs block">
+                ceo@spacegenaviation.in
+              </a>
+            </div>
           </div>
 
           <div className="p-8 rounded-lg border border-border bg-card text-center hover:border-primary/50 transition-colors">

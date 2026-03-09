@@ -81,9 +81,14 @@ export default function Footer() {
                 <div className="h-8 w-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Mail className="h-3.5 w-3.5 text-indigo-400" />
                 </div>
-                <a href="mailto:spacegensouthindia@gmail.com" className="text-sm text-slate-400 hover:text-cyan-400 transition-colors break-all">
-                  spacegensouthindia@gmail.com
-                </a>
+                <div className="space-y-1">
+                  <a href="mailto:info@spacegenaviation.in" className="text-sm text-slate-400 hover:text-cyan-400 transition-colors block break-all">
+                    info@spacegenaviation.in
+                  </a>
+                  <a href="mailto:ceo@spacegenaviation.in" className="text-sm text-slate-400 hover:text-cyan-400 transition-colors block break-all">
+                    ceo@spacegenaviation.in
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
@@ -96,16 +101,16 @@ export default function Footer() {
             </h4>
             <div className="space-y-5">
               <div className="flex items-start gap-3">
-                <div className="h-8 w-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                {/* <div className="h-8 w-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <MapPin className="h-3.5 w-3.5 text-purple-400" />
-                </div>
-                <div>
+                </div> */}
+                {/* <div>
                   <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-1">Head Office</p>
                   <p className="text-xs text-slate-400 leading-relaxed">
                     Level 4, Gumidelli Towers,<br />
                     Begumpet, Hyderabad - 500016
                   </p>
-                </div>
+                </div> */}
               </div>
               <div className="flex items-start gap-3">
                 <div className="h-8 w-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">

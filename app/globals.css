@@ -122,11 +122,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground cursor-none;
+    @apply bg-background text-foreground;
   }
-}
-
-/* Hide cursor on clickable elements to prevent flickering */
-a, button, [role="button"] {
-  cursor: none !important;
 }

@@ -66,8 +66,11 @@ export function CTASection() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-gray-400 mb-1">Email</p>
-                <a href="mailto:spacegensouthindia@gmail.com" className="font-bold text-gray-900 hover:text-blue-600 transition-colors">
-                  spacegensouthindia@gmail.com
+                <a href="mailto:info@spacegenaviation.in" className="font-bold text-gray-900 hover:text-blue-600 transition-colors block">
+                  info@spacegenaviation.in
+                </a>
+                <a href="mailto:ceo@spacegenaviation.in" className="font-bold text-gray-900 hover:text-blue-600 transition-colors block">
+                  ceo@spacegenaviation.in
                 </a>
               </div>
             </div>
@@ -91,14 +94,14 @@ export function CTASection() {
               <div>
                 <p className="text-sm font-semibold text-gray-400 mb-4">Locations</p>
                 <div className="space-y-4">
-                  <div>
+                  {/* <div>
                     <p className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">HEAD OFFICE:</p>
                     <p className="font-medium text-gray-600 text-sm leading-relaxed">
                       Level 4, Gumidelli Towers, 1-10-39 to 44,<br />
                       Old Airport Rd, Begumpet,<br />
                       Hyderabad - 500016
                     </p>
-                  </div>
+                  </div> */}
                   <div>
                     <p className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1 mt-4">REGIONAL OFFICE:</p>
                     <p className="font-medium text-gray-600 text-sm leading-relaxed">
