@@ -25,16 +25,10 @@ const allowedOrigins = process.env.CORS_ORIGIN
   ];
 
 app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      return callback(null, true);
-    } else {
-      return callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: allowedOrigins,
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -43,6 +37,17 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 const API_PREFIX = '/api/v1';
+
+// Main root route for accessibility/health Check
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Welcome to SpaceGen Aviation API 🚀',
+    documentation: 'https://spacegen-backend.onrender.com/api/v1',
+    status: 'online',
+    timestamp: new Date().toISOString()
+  });
+});
 
 // Routes
 app.use(`${API_PREFIX}/auth`, authRoutes);
