@@ -20,7 +20,7 @@ const allowedOrigins = process.env.CORS_ORIGIN
   : [
     'https://spacegen-aviation-six.vercel.app',
     'https://spacegen-aviation-utd3.vercel.app',
-    'http://localhost:3000', 
+    'http://localhost:3000',
     'http://localhost:3001'
   ];
 
