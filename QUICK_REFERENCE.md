@@ -18,7 +18,7 @@ npm run dev
 
 # 5. Open browser
 # Home: http://localhost:3000
-# Admin: http://localhost:3000/admin (username: admin, password: spacegen@2024)
+# Admin: http://localhost:3000/admin (username: admin, password: spacegen@2026)
 ```
 
 ---
@@ -117,7 +117,7 @@ POST /api/enquiries
 POST /api/admin/login
 {
   "username": "admin",
-  "password": "spacegen@2024"
+  "password": "spacegen@2026"
 }
 ```
 
@@ -153,7 +153,7 @@ JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 
 # Admin User
 ADMIN_USERNAME=admin
-ADMIN_PASSWORD=spacegen@2024
+ADMIN_PASSWORD=spacegen@2026
 
 # Server
 NODE_ENV=development

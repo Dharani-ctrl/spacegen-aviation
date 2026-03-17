@@ -44,7 +44,7 @@ PORT=5000
 MONGODB_URI=YOUR_MONGODB_ATLAS_CONNECTION_STRING
 JWT_SECRET=your-secret-key-min-32-characters-here
 ADMIN_USERNAME=admin
-ADMIN_PASSWORD=spacegen@2024
+ADMIN_PASSWORD=spacegen@2026
 CORS_ORIGIN=http://localhost:3000
 ```
 
@@ -71,7 +71,7 @@ npm run dev
 4. **Check backend:** Data saved to MongoDB
 5. **Test admin login:**
    - URL: http://localhost:5000/api/health (should return 200)
-   - Admin creds: admin / spacegen@2024
+   - Admin creds: admin / spacegen@2026
 
 ## What You'll See
 
@@ -230,7 +230,7 @@ curl -X POST http://localhost:5000/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "username": "admin",
-    "password": "spacegen@2024"
+    "password": "spacegen@2026"
   }'
 ```
 

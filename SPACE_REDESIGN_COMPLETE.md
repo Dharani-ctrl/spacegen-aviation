@@ -264,7 +264,7 @@ NEXT_PUBLIC_API_URL=http://localhost:5000
 MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/spacegen
 JWT_SECRET=your-secret-key-min-32-chars
 ADMIN_USERNAME=admin
-ADMIN_PASSWORD=spacegen@2024
+ADMIN_PASSWORD=spacegen@2026
 CORS_ORIGIN=http://localhost:3000
 NODE_ENV=development
 ```

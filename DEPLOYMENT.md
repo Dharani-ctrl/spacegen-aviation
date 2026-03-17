@@ -93,7 +93,7 @@ git push -u origin main
    EMAIL_PASS=your_app_specific_password
    EMAIL_FROM=noreply@spacegen.com
    ADMIN_EMAIL=admin@spacegen.com
-   ADMIN_PASSWORD=spacegen@2024
+   ADMIN_PASSWORD=spacegen@2026
    ```
 5. Deploy the project. Railway will build and provide a public URL like `https://your-project.up.railway.app`.
 
@@ -151,7 +151,7 @@ EMAIL_USER=your_email@gmail.com
 EMAIL_PASS=your_app_password
 EMAIL_FROM=noreply@spacegen.com
 ADMIN_EMAIL=admin@spacegen.com
-ADMIN_PASSWORD=spacegen@2024
+ADMIN_PASSWORD=spacegen@2026
 ```
 
 ---

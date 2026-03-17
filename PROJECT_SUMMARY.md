@@ -112,7 +112,7 @@ Content-Type: application/json
 POST /api/admin/login
 {
   "username": "admin",
-  "password": "spacegen@2024"
+  "password": "spacegen@2026"
 }
 ```
 

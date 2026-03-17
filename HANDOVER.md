@@ -147,7 +147,7 @@ spacegen-aviation/
 **Default Credentials:**
 - URL: http://localhost:3000/admin
 - Username: `admin`
-- Password: `spacegen@2024`
+- Password: `spacegen@2026`
 
 ⚠️ **Change password after first login in production!**
 
@@ -331,7 +331,7 @@ Tier 3 (Medium):        ₹4,000 - ₹5,500/month
 
 ### Before Production
 1. **Change Admin Password**
-   - Default: `spacegen@2024`
+   - Default: `spacegen@2026`
    - Change to strong password
 
 2. **Generate New JWT_SECRET**

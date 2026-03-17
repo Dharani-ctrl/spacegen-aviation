@@ -47,7 +47,7 @@ EMAIL_FROM=noreply@spacegen.com
 
 # Admin Credentials
 ADMIN_EMAIL=admin@spacegen.com
-ADMIN_PASSWORD=spacegen@2024
+ADMIN_PASSWORD=spacegen@2026
 ```
 
 ## Project Structure
@@ -624,7 +624,7 @@ Run with: `node scripts/createAdmin.js`
 | EMAIL_USER | Gmail address | admin@gmail.com |
 | EMAIL_PASS | Gmail app password | xxxx xxxx xxxx xxxx |
 | ADMIN_EMAIL | Admin login email | admin@spacegen.com |
-| ADMIN_PASSWORD | Admin login password | spacegen@2024 |
+| ADMIN_PASSWORD | Admin login password | spacegen@2026 |
 
 ---
 

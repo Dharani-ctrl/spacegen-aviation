@@ -67,7 +67,7 @@ npm run db:init
 
 This will create:
 - **Username**: admin (or your ADMIN_USERNAME env var)
-- **Password**: spacegen@2024 (or your ADMIN_PASSWORD env var)
+- **Password**: spacegen@2026 (or your ADMIN_PASSWORD env var)
 
 ### Manual Admin Creation (Alternative)
 ```bash
@@ -87,7 +87,7 @@ Content-Type: application/json
 
 {
   "username": "admin",
-  "password": "spacegen@2024"
+  "password": "spacegen@2026"
 }
 ```
 

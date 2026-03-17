@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/spacegen';
 const adminUsername = process.env.ADMIN_USERNAME || 'admin';
-const adminPassword = process.env.ADMIN_PASSWORD || 'spacegen@2024';
+const adminPassword = process.env.ADMIN_PASSWORD || 'spacegen@2026';
 
 async function initializeAdmin() {
   try {

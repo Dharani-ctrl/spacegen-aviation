@@ -173,7 +173,7 @@ npm run dev
 
 4. **Admin Login** → http://localhost:3000/admin
    - Username: `admin`
-   - Password: `spacegen@2024`
+   - Password: `spacegen@2026`
 
 5. **Admin Dashboard** → http://localhost:3000/admin/dashboard
    - View submitted enquiries

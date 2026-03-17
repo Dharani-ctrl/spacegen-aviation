@@ -51,7 +51,7 @@ cp .env.example .env.local
 
 # 4. Initialize admin user (run once)
 npm run db:init
-# Default: username: admin, password: spacegen@2024
+# Default: username: admin, password: spacegen@2026
 
 # 5. Start development server
 npm run dev
@@ -72,7 +72,7 @@ JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 
 # Admin Credentials (Set initially)
 ADMIN_USERNAME=admin
-ADMIN_PASSWORD=spacegen@2024
+ADMIN_PASSWORD=spacegen@2026
 
 # Environment
 NODE_ENV=development
@@ -192,7 +192,7 @@ spacegen-website/
 
 **Default Credentials**:
 - Email: `admin@spacegen.com`
-- Password: `spacegen@2024`
+- Password: `spacegen@2026`
 
 ⚠️ **Important**: Change credentials after first login in production!
 
@@ -225,7 +225,7 @@ POST /api/admin/login
 
 {
   "username": "admin",
-  "password": "spacegen@2024"
+  "password": "spacegen@2026"
 }
 ```
 

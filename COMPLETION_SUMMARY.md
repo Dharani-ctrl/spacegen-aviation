@@ -165,7 +165,7 @@ spacegen-aviation/
 **URL**: http://localhost:3000/admin
 
 **Username**: admin  
-**Password**: spacegen@2024
+**Password**: spacegen@2026
 
 ⚠️ **IMPORTANT**: Change password after first login!
 
