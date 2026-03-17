@@ -3,7 +3,30 @@
 import { Star, Lightbulb, Target, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+import { useState, useEffect } from 'react';
+
 export function AboutSection() {
+  const [content, setContent] = useState({
+    title: 'About SpaceGen',
+    description: 'SpaceGen Aviation stands at the forefront of the global aviation industry...',
+    description2: 'With a fleet of 75 aircraft, our training programs...'
+  });
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/v1/content/about`);
+        if (response.ok) {
+          const result = await response.json();
+          setContent(result.data);
+        }
+      } catch (error) {
+        console.error('Failed to fetch about content:', error);
+      }
+    };
+    fetchContent();
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -75,14 +98,16 @@ export function AboutSection() {
             <span className="text-sm font-bold text-blue-600 uppercase tracking-wider">WHY CHOOSE SPACEGEN</span>
           </div>
           <h2 className="text-5xl sm:text-6xl font-black text-gray-900 text-balance mb-6 uppercase">
-            About SpaceGen
+            {content.title}
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed text-left">
-            SpaceGen Aviation stands at the forefront of the global aviation industry as a premier manufacturer and seller of aircraft and its components, serving both India and the international market. Our comprehensive expertise extends beyond manufacturing, encompassing a robust flight training organization with significant operations in Indonesia and the UAE.
+            {content.description}
           </p>
-          <p className="text-xl text-gray-600 leading-relaxed text-left mt-4">
-            With a fleet of 75 aircraft, our training programs have successfully produced over 1,600 highly skilled pilots. Our commitment to excellence is recognized by the British Aviation Group, AeroEast Serbia, Jazeerah aviation club in the UAE, and NFI in Indonesia.
-          </p>
+          {content.description2 && (
+            <p className="text-xl text-gray-600 leading-relaxed text-left mt-4">
+              {content.description2}
+            </p>
+          )}
         </div>
 
         {/* Highlight Cards — Modern Image Grid */}

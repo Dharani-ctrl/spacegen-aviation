@@ -6,7 +6,82 @@ import { ArrowRight, CheckCircle, Rocket, Plane, Trophy, Star } from 'lucide-rea
 import { Card } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 
+import { useState, useEffect } from 'react';
+
 export function ProgramsSection() {
+  const [content, setContent] = useState({
+    title: 'Aviation Adventure',
+    subtitle: 'Join the most exciting aviation school for kids and future pilots!',
+    programs: [
+      {
+        level: 'Level 1',
+        title: 'Foundation Program',
+        subtitle: 'Perfect for beginners',
+        duration: '40 Hours',
+        target: 'Class 4th - 12th',
+        price: '₹15,000',
+        features: [
+          'Fun Pilot Training Games!',
+          'Exciting In-Person Labs',
+          'Wings of Wonder Program',
+          'Fly a Simulator & Build Engines!',
+          'Awesome Field Trips & Paragliding!',
+        ],
+        iconName: 'Rocket',
+        gradient: 'from-blue-500/10 to-cyan-500/10',
+        accentColor: 'bg-blue-600',
+        borderColor: 'border-blue-200',
+        glow: 'shadow-[0_0_30px_rgba(59,130,246,0.2)]',
+      },
+      {
+        level: 'Level 2',
+        title: 'Advanced Program',
+        subtitle: "Fully trained student pilot",
+        duration: '80 Hours',
+        target: 'Class 12th & Above',
+        price: '₹35,000',
+        features: [
+          'Become a Young Pilot Expert!',
+          'Learn from Real Engineers!',
+          'Fly Your Own Drones (UAVs)!',
+          'Get Your Own Aviation Kit!',
+          'Professional Industry Certification',
+        ],
+        iconName: 'Plane',
+        gradient: 'from-indigo-500/10 to-purple-500/10',
+        accentColor: 'bg-indigo-600',
+        borderColor: 'border-indigo-200',
+        featured: true,
+        glow: 'shadow-[0_0_40px_rgba(99,102,241,0.2)]',
+      },
+    ]
+  });
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/v1/content/programs`);
+        if (response.ok) {
+          const result = await response.json();
+          setContent(result.data);
+        }
+      } catch (error) {
+        console.error('Failed to fetch programs content:', error);
+      }
+    };
+    fetchContent();
+  }, []);
+
+  const getIcon = (name: string) => {
+    switch (name) {
+      case 'Rocket': return Rocket;
+      case 'Plane': return Plane;
+      case 'Trophy': return Trophy;
+      case 'Star': return Star;
+      default: return Rocket;
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -129,11 +204,11 @@ export function ProgramsSection() {
             Start Your
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
               {' '}
-              Aviation Adventure
+              {content.title}
             </span>
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed font-bold">
-            Join the most exciting aviation school for kids and future pilots!
+            {content.subtitle}
           </p>
         </motion.div>
 
@@ -145,8 +220,8 @@ export function ProgramsSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
         >
-          {programs.map((program, idx) => {
-            const Icon = program.icon;
+          {(content.programs || []).map((program: any, idx: number) => {
+            const Icon = getIcon(program.iconName || 'Rocket');
             return (
               <motion.div
                 key={idx}
@@ -165,12 +240,12 @@ export function ProgramsSection() {
                   }`}
               >
                 {/* Space Glow behind card */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${program.gradient} rounded-[2.5rem] blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${program.gradient || 'from-blue-500/10 to-cyan-500/10'} rounded-[2.5rem] blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />
 
                 <Card className={`relative h-full border-none rounded-[2.5rem] shadow-2xl overflow-hidden backdrop-blur-xl border border-white/40 ring-1 ring-black/5 hover:ring-blue-400/30 transition-all duration-500 ${program.featured
                   ? 'bg-gradient-to-br from-white/80 to-indigo-50/40'
                   : 'bg-gradient-to-br from-white/80 to-blue-50/40'
-                  } ${program.glow}`}>
+                  } ${program.glow || ''}`}>
                   {program.featured && (
                     <div className="absolute top-0 right-0 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-2 rounded-bl-[2rem] text-xs font-black tracking-widest shadow-lg z-20">
                       MOST POPULAR
@@ -181,7 +256,7 @@ export function ProgramsSection() {
                     {/* Header Section */}
                     <div className="flex items-start justify-between">
                       <div className="space-y-1">
-                        <span className={`text-[10px] font-black py-1 px-3 rounded-full text-white uppercase tracking-widest shadow-md ${program.accentColor}`}>
+                        <span className={`text-[10px] font-black py-1 px-3 rounded-full text-white uppercase tracking-widest shadow-md ${program.accentColor || 'bg-blue-600'}`}>
                           {program.level}
                         </span>
                         <h3 className="text-3xl font-black text-gray-900 leading-tight uppercase tracking-tight pt-2">
@@ -191,7 +266,7 @@ export function ProgramsSection() {
                           {program.subtitle}
                         </p>
                       </div>
-                      <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${program.gradient.replace('/10', '')} flex items-center justify-center text-white flex-shrink-0 shadow-2xl group-hover:rotate-12 transition-transform duration-500`}>
+                      <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${(program.gradient || 'from-blue-500 to-cyan-500').replace('/10', '')} flex items-center justify-center text-white flex-shrink-0 shadow-2xl group-hover:rotate-12 transition-transform duration-500`}>
                         <Icon strokeWidth={2.5} className="h-8 w-8" />
                       </div>
                     </div>
@@ -216,9 +291,9 @@ export function ProgramsSection() {
 
                     {/* Feature Checklist */}
                     <div className="flex-grow space-y-4">
-                      {program.features.map((feature, fidx) => (
+                      {(program.features || []).map((feature: string, fidx: number) => (
                         <div key={fidx} className="flex items-center gap-4 group/item">
-                          <div className={`h-2 w-2 rounded-full transition-all duration-300 group-hover/item:scale-150 ${program.accentColor}`} />
+                          <div className={`h-2 w-2 rounded-full transition-all duration-300 group-hover/item:scale-150 ${program.accentColor || 'bg-blue-600'}`} />
                           <span className="text-sm font-bold text-gray-600 group-hover:text-gray-900 transition-colors tracking-tight">
                             {feature}
                           </span>

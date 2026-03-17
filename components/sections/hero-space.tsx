@@ -7,7 +7,29 @@ import { TextReveal } from '@/components/animations/text-reveal';
 import { ParallaxSection } from '@/components/animations/parallax-section';
 import { ArrowRight, Zap, BookOpen, Cpu, Award, Plane } from 'lucide-react';
 
+import { useState, useEffect } from 'react';
+
 export function HeroSection() {
+  const [content, setContent] = useState({
+    title: 'Aviation Programme',
+    subtitle: 'For School Students'
+  });
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/v1/content/hero`);
+        if (response.ok) {
+          const result = await response.json();
+          setContent(result.data);
+        }
+      } catch (error) {
+        console.error('Failed to fetch hero content:', error);
+      }
+    };
+    fetchContent();
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -114,11 +136,11 @@ export function HeroSection() {
             <motion.div variants={itemVariants} className="space-y-4">
               <h1 className="text-3xl sm:text-6xl md:text-7xl font-black leading-tight text-balance uppercase text-gray-900">
                 <TextReveal duration={1}>
-                  Aviation Programme
+                  {content.title}
                 </TextReveal>
               </h1>
               <p className="text-lg sm:text-xl text-blue-600 max-w-lg leading-relaxed font-semibold">
-                For School Students
+                {content.subtitle}
               </p>
             </motion.div>
 

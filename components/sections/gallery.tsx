@@ -1,46 +1,33 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 const INITIAL_COUNT = 6;
 
-const galleryImages = [
-    { url: '/img9.jpg', title: 'Flight Training', description: 'Expert instruction in modern aircraft.' },
-    { url: '/img14.jpg', title: 'Aviation Academy', description: 'Learn to fly with state-of-the-art facilities.' },
-    { url: '/img15.jpg', title: 'Modern Fleet', description: 'Training with the latest aviation technology.' },
-    { url: '/img16.jpeg', title: 'Cockpit View', description: 'Hands-on experience in high-performance aircraft.' },
-    { url: '/img17.jpeg', title: 'Aerodynamics', description: 'Explore the science of flight.' },
-    { url: '/img18.jpeg', title: 'Graduation Day', description: 'Celebrating the success of our students.' },
-    { url: '/img19.jpeg', title: 'Advanced Simulator', description: 'Practicing complex maneuvers safely.' },
-    { url: '/img20.jpeg', title: 'Maintenance Hangar', description: 'Keeping our fleet in top condition.' },
-    { url: '/img21.jpeg', title: 'Pilot Briefing', description: 'Preparation for every training flight.' },
-    { url: '/img22.jpeg', title: 'Solo Flight', description: 'A major milestone in every pilot\'s journey.' },
-    { url: '/img23.jpeg', title: 'Aerial Photography', description: 'Stunning views from above.' },
-    { url: '/img24.jpeg', title: 'Night Training', description: 'Learning the skills for 24/7 operations.' },
-    { url: '/img25.jpeg', title: 'Cross-Country Navigation', description: 'Flying to new horizons.' },
-    { url: '/img26.jpeg', title: 'Aviation Theory', description: 'Mastering the principles of flight.' },
-    { url: '/img27.jpeg', title: 'Safety First', description: 'Rigorous safety standards and training.' },
-    { url: '/img28.jpeg', title: 'Student Community', description: 'Building friendships that last a lifetime.' },
-    { url: '/img29.jpeg', title: 'Career Guidance', description: 'Preparing for a professional airline career.' },
-    { url: '/img30.jpeg', title: 'Engine Inspection', description: 'Understanding aircraft systems.' },
-    { url: '/img31.jpeg', title: 'ATC Communication', description: 'Mastering radio procedures.' },
-    { url: '/img32.jpeg', title: 'Meteorology', description: 'Understanding weather for safe flying.' },
-    { url: '/img33.jpeg', title: 'Flight Planning', description: 'Precise preparation for every mission.' },
-    { url: '/img34.jpeg', title: 'Helicopter Training', description: 'Versatile pilot training options.' },
-    { url: '/img35.jpeg', title: 'Global Aviation', description: 'Connecting with the world of flight.' },
-    { url: '/img36.jpeg', title: 'Innovation in Flight', description: 'Exploring the future of aviation.' },
-    { url: '/img37.jpeg', title: 'Aviation Leadership', description: 'Training the next generation of commanders.' },
-    { url: '/img38.jpeg', title: 'Precision Landing', description: 'Developing expert handling skills.' },
-    { url: '/img39.jpeg', title: 'Instrument Rating', description: 'Mastering flight by reference to instruments.' },
-    { url: '/img40.jpeg', title: 'Academy Campus', description: 'Our beautiful location for learning.' },
-    { url: '/img41.jpeg', title: 'Passion for Flight', description: 'Where dreams take to the skies.' },
-    { url: '/img2 (2).jpeg', title: 'Inauguration', description: 'The beginning of excellence.' },
-];
-
 export function GallerySection() {
     const [showAll, setShowAll] = useState(false);
+    const [content, setContent] = useState<any>(null);
+
+    useEffect(() => {
+        const fetchContent = async () => {
+            try {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/v1/content/gallery`);
+                if (response.ok) {
+                    const result = await response.json();
+                    if (result.success && result.data) {
+                        setContent(result.data);
+                    }
+                }
+            } catch (error) {
+                console.error('Gallery fetch error:', error);
+            }
+        };
+        fetchContent();
+    }, []);
+
+    const galleryImages = content?.images || [];
     const displayedImages = showAll ? galleryImages : galleryImages.slice(0, INITIAL_COUNT);
 
     return (
@@ -60,7 +47,7 @@ export function GallerySection() {
                         viewport={{ once: true }}
                         className="text-4xl font-black tracking-tight text-slate-900 md:text-5xl lg:text-6xl"
                     >
-                        OUR SPACE <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">ADVENTURES</span>
+                        {content?.title?.split(' ')[0] || 'OUR'} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">{content?.title?.split(' ').slice(1).join(' ') || 'GALLERY'}</span>
                     </motion.h2>
                     <motion.div
                         initial={{ width: 0 }}
@@ -76,7 +63,7 @@ export function GallerySection() {
                         viewport={{ once: true }}
                         className="max-w-2xl mx-auto mt-6 text-lg text-slate-600 font-medium"
                     >
-                        Check out our amazing students and cool aircraft in action! See what it&apos;s like to be part of the SpaceGen family.
+                        {content?.subtitle || 'Take a look at our amazing students and aircraft!'}
                     </motion.p>
                 </div>
 
@@ -85,7 +72,7 @@ export function GallerySection() {
                     className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
                 >
                     <AnimatePresence mode="popLayout">
-                        {displayedImages.map((image, index) => (
+                        {displayedImages.map((image: any, index: number) => (
                             <motion.div
                                 key={image.url}
                                 layout
